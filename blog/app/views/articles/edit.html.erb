@@ -1,0 +1,35 @@
+<div class="row" style="padding-top:12%;"">
+<div class="col"></div>
+<div class="col-md-6">
+<h1>Edit article</h1>
+ <%= form_with(model: @article) do |form| %>
+ <% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@article.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @article.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title,class: 'form-control' %>
+  </p>
+  <p>
+    <%= form.label :text %><br>
+    <%= form.text_area :text,class: 'form-control' %>
+  </p>
+  <p>
+    <%= form.submit class:'btn btn-lg btn-success' %>
+  </p>
+<% end %>
+ <%= link_to 'Back', articles_path,class:'btn btn-md btn-info' %>
+ <%= link_to 'Home', welcome_index_path, class:'btn btn-md btn-primary' %>
+</div><!--col-md-10-->
+<div class="col"></div>
+</div><!--row-->

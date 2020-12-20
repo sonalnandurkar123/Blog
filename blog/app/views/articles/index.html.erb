@@ -1,0 +1,31 @@
+<div class="row">
+<div class="col"></div>
+<div class="col-md-10">
+<h1>Listing Articles</h1>
+<p><%= link_to 'Create New article', new_article_path, class:'btn btn-lg btn-info' %></p>
+<table class="table table-hover">
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th colspan="4">Editing Option</th>
+  </tr>
+ 
+  <% @articles.each do |article| %>
+    <tr id='<%= article.id %>'>
+      <td><%= article.title %></td>
+      <td><%= truncate(article.text, length: 75) %></td>
+      <td><%= link_to 'Show', article_path(article), class: 'btn btn-sm btn-info' %></td>
+      <td><%= link_to 'Edit', edit_article_path(article),class: 'btn btn-sm btn-warning' %></td>
+      <td><%= link_to 'Destroy', article_path(article),
+      class: 'btn btn-sm btn-danger',
+      method: :delete,
+      data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+<P>
+  <%= link_to 'home',welcome_index_path, class:'btn btn-sm btn-primary' %>
+</P> 
+</div><!--col-md-10-->
+<div class="col"></div>
+</div><!--row-->

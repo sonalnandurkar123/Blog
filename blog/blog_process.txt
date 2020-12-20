@@ -1,0 +1,26 @@
+step-1 : rails new blog
+step-2 : cd blog
+step-3 : rails s
+step-4 : rails generate controller welcome index
+step-5 : rails generate controller Articles
+step-6 : rails generate model Article title:string text:text
+step-7 : rails db:migrate
+step-8 : rails generate model Comment commenter:string body:text article:references
+step-9 : rails db:migrate
+step-10 : rails generate controller Comments
+Adding Boostrap :
+step-11 : gem boostrap to gemfile
+step-12 : gem install boostrap
+step-13 : gem sprockets-rails
+step-14 : gem install sprockets-rails
+step-15 : bundle install or bundle update
+step-16 : then import boostrap style in app/asset/stylesheets/application.css:
+@import "bootstrap";
+step-17 : paste gem jquery-rails to gemfile
+step-18 : gem install jquery-rails
+step-19 : bundle install
+step-20 : paste //*require popper
+                //*require boostrap-sprockets to javascript/application.js
+Working search bar:
+
+ 
